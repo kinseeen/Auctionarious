@@ -1,0 +1,14 @@
+img {
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+}
+.btn-primary:hover {
+    background-color: var(--on-primary-hover-color);
+    color: var(--primary-color);
+}
