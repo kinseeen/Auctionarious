@@ -20,7 +20,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionerious logo" id="navbarLogo">
+        <div class="d-flex flex-column">
+
+            <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionerious logo" id="navbarLogo">
+            <p id="credits"> total credits: </p>
+        </div>
         <ul class="navbar-nav me-auto d-flex flex-row mt-6 mt-lg-5">
             <li class="nav-item text-center mx-2 mx-lg-1">
                 <a class="nav-link active" aria-current="page" href="/html/profile.html">
@@ -45,16 +49,15 @@
 
 
 <body class="ProfilePageBody">
-    
+
 
     <div class="container d-flex justify-content-center align-items-center ">
         <div class="profileCard d-flex flex-column align-items-center" id="profileCard">
 
-            <img src=""
-                class="profileImage rounded-circle" id="profileAvatar" alt="error loading image">
+            <img src="" class="profileImage rounded-circle" id="profileAvatar" alt="error loading image">
             <div class="mt-5 text-center">
                 <h4 class="mb-0" id="profileName"></h4>
-                <h8 class="mb-0" id="profileEmail">  </h8>
+                <h8 class="mb-0" id="profileEmail"> </h8>
                 <div class="d-flex justify-content-center align-items-center mt-4 px-4">
 
                     <div class="d-flex justify-content-center align-items-center mt-4 px-4">
@@ -68,14 +71,51 @@
                         </div>
 
 
-                    <div class="d-flex flex-column text-center mr-2">
-                        <span class="current-balance justify">Current Balance</span>
-                        <span class="amount"><span class="dollar-sign">$</span>1000</span>
+                        <div class="d-flex flex-column text-center mr-2">
+                            <span class="current-balance justify">Current Balance</span>
+                            <span class="amount"><span class="dollar-sign">$</span>1000</span>
+                        </div>
                     </div>
-                </div>
-                <div class="text-center"><a class="btn btn-outline-dark mt-auto" data-bs-toggle="modal" data-bs-target="#myModal" href="#">Change profile</a>
-                
-                    
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" data-toggle="modal" data-target="#myModal">Update
+                            avatar</a>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"> Update avatar</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="profileForm">
+
+                                        <div class="mb-3">
+                                            <label for="avatar" class="form-label">Avatar URL</label>
+                                            <input type="text" class="form-control" id="avatar"
+                                                placeholder="Enter the URL of your avatar">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- Add your form or other content here -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -4,10 +4,9 @@
   padding-bottom: 20px;
 } */
 #loginImage {
-    width: 100%;
-    padding-bottom:20px;
+  width: 100%;
+  padding-bottom: 20px;
 }
-
 
 .btn-primary {
   background-color: var(--primary-color);
@@ -36,15 +35,15 @@
 }
 
 #purchaseButton {
-  border-color:#6356e5;
+  border-color: #6356e5;
 }
 
 .backButton {
-  padding-left:20px;  
+  padding-left: 20px;
 }
 
 .biddingButton {
-  padding-left:40px;
+  padding-left: 40px;
 }
 
 .profileCard {
@@ -64,9 +63,9 @@
 } */
 
 .profileImage {
-object-fit: cover;
-height:100px;
-width:100px;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
 }
 
 .profile {
@@ -118,20 +117,27 @@ h4 {
 }
 
 #navbarLogo {
-    width: 20%;
-    height: 20%;
+  width: 350px;
+  height: auto;
 }
 
 .navbar {
-    border-bottom: #6356e5;
-    border-style:initial;
-    border-width: 1px;;
+  border-bottom: #6356e5;
+  border-style: initial;
+  border-width: 1px;
 }
 
-
+#navbarLogo,
+#credits {
+  display: block;
+  
+}
 
 @media (max-width: 768px) {
   #searchBar {
-    display:none;
+    display: none;
+  }
+  #navbarLogo {
+    width: 200px;
   }
 }

@@ -22,7 +22,20 @@ async function setProfileCard(profile) {
   document.getElementById("profileAvatar").src = profile.data.avatar.url;
 }
 
-async function 
+
+document
+  .getElementById("profileForm")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const avatar = document.getElementById("avatar").value;
+    await updateProfile("kine", avatar);
+    $('#myModal').modal('hide');
+
+    // Refresh the page
+    location.reload();
+  });
+
+
 
 const profile = await getProfile("kine");
 setProfileCard(profile);
