@@ -20,8 +20,9 @@ async function setProfileCard(profile) {
   document.getElementById("profileName").textContent = profile.data.name;
   document.getElementById("profileEmail").textContent = profile.data.email;
   document.getElementById("profileAvatar").src = profile.data.avatar.url;
+  document.getElementById("credits").textContent += profile.data.credits;
+  document.getElementById("totalCreditProfile").textContent += profile.data.credits;
 }
-
 
 document
   .getElementById("profileForm")
@@ -29,13 +30,11 @@ document
     event.preventDefault();
     const avatar = document.getElementById("avatar").value;
     await updateProfile("kine", avatar);
-    $('#myModal').modal('hide');
+    $("#myModal").modal("hide");
 
     // Refresh the page
     location.reload();
   });
-
-
 
 const profile = await getProfile("kine");
 setProfileCard(profile);
