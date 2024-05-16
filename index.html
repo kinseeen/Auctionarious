@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./script/login.mjs" type="module"></script>
+    <script src="./js/login.mjs" type="module"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
-                        <div class="card-body p-5 text-center">
+                        <form class="card-body p-5 text-center" id="loginForm">
                             <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionarious logo" id="loginImage">
                             <div data-mdb-input-init class="form-outline mb-4">
                                 <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
@@ -40,7 +40,7 @@
                                     class="link-danger">Register</a></p>
                             <p class="small fw-bold mt-2 pt-1 mb-0">Continue as a guest? <a
                                     href="/html/auctionPage.html" class="link-danger"> Continue </a></p>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -48,9 +48,6 @@
     </section>
 
 
-
-
-</body>
 
 
 </body>
