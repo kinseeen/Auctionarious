@@ -16,7 +16,7 @@ async function setCredits() {
 
 window.onload = async function () {
 
-  addNavBar();
+  await addNavBar();
   setCredits();
 
 }
@@ -54,7 +54,7 @@ async function setAuctionListings() {
         </div>
         <!-- Product actions-->
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="purchaseButton" href="/html/auctionItem.html">View item</a>
+            <div class="text-center"><a class="btn btn-outline-dark mt-auto" id="purchaseButton" href="/html/auctionItem.html?id=${listing.id}">View item</a>
             </div>
         </div>
     </div>
