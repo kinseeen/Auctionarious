@@ -1,5 +1,6 @@
 import { addNavBar, setCredits } from './topNavigationBar.mjs';
 import { get, post } from './http.mjs';
+import { getProfile } from './profileModule.mjs';
 
 
 window.onload = async function () {
@@ -66,13 +67,17 @@ document.getElementById("bidButton").addEventListener("click", async function ()
     const response = await post("auction/listings/" + id + "/bids", {
         amount: parseInt(bid, 10)
     });
-    console.log(response);
     if (response.errors) {
         // Set the alert message in the modal
         document.querySelector('.modal-body').textContent = response.errors[0].message;
         // Show the modal
         var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
         myModal.show();
+    } else {
+        await getProfile(localStorage.getItem("name"));
+        location.reload();
+
+        
     }
     //location.reload();
 });

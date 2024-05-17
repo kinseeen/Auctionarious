@@ -7,6 +7,7 @@ async function loginUser(email, password) {
   }, false);
 
   localStorage.setItem("token", response.data.accessToken);
+  localStorage.setItem("name", response.data.name);
   console.log(response.data.accessToken);
   window.location.href = "html/profile.html";
 }
@@ -19,4 +20,7 @@ document
     const email = document.getElementById("typeEmailX-2").value;
     const password = document.getElementById("typePasswordX-2").value;
     await loginUser(email, password);
+
+    
+
   });

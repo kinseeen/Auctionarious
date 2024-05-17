@@ -1,26 +1,10 @@
 import { get, put, post } from "./http.mjs";
 import { addNavBar } from "./topNavigationBar.mjs";
-
-async function getProfile(name) {
-  const response = await get("auction/profiles/" + name);
+import { getProfile, updateProfile } from "./profileModule.mjs";
 
 
-  // store credits in local storage
-  console.log(response.data.credits)
-  localStorage.setItem("credits", response.data.credits);
-  
-  return response;
-}
 
-async function updateProfile(name, avatarUrl) {
-  const response = await put("auction/profiles/" + name, {
-    avatar: {
-      url: avatarUrl,
-      alt: "",
-    },
-  });
-  console.log(response);
-}
+
 
 window.onload = async function () {
   addNavBar();
@@ -32,21 +16,29 @@ async function setProfileCard(profile) {
   document.getElementById("profileAvatar").src = profile.data.avatar.url;
   document.getElementById("credits").textContent += profile.data.credits;
   document.getElementById("totalCreditProfile").textContent += profile.data.credits;
+  document.getElementById("bidWins").textContent += profile.data._count.wins;
+  document.getElementById("bidListings").textContent += profile.data._count.listings;
 }
 
-document
-  .getElementById("profileForm")
-  .addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const avatar = document.getElementById("avatar").value;
-    await updateProfile("kine", avatar);
-    $("#myModal").modal("hide");
 
-    // Refresh the page
-    location.reload();
-  });
 
-const profile = await getProfile("kine");
-setProfileCard(profile);
+async function loadProfile() {
+  document
+    .getElementById("profileForm")
+    .addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const avatar = document.getElementById("avatar").value;
+      const name = await localStorage.getItem("name");
+      await updateProfile(name, avatar);
+      $("#myModal").modal("hide");
 
+      // Refresh the page
+      location.reload();
+    });
+  const name = localStorage.getItem("name");
+  const profile = await getProfile(name);
+  setProfileCard(profile);
+}
+
+loadProfile();
 export { getProfile }

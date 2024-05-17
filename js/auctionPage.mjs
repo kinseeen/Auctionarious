@@ -63,5 +63,9 @@ async function setAuctionListings() {
   
 }
 
+document.getElementById("newListingButton").addEventListener("click", async (event) => {
+  console.log("new listing button clicked");
+});
+
 setAuctionListings();
 
