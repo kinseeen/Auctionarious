@@ -4,124 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auction</title>
+    <title>Auction Item</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/colorPalette.css">
+    <link rel="stylesheet" href="/css/colorPalette.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./script/login.mjs" type="module"></script>
+
+    <script src="/js/auctionItem.mjs" type="module"></script>
+
 </head>
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionerious logo" id="navbarLogo">
-        <ul class="navbar-nav me-auto d-flex flex-row mt-6 mt-lg-5">
-            <li class="nav-item text-center mx-2 mx-lg-1">
-                <a class="nav-link active" aria-current="page" href="/html/profile.html">
-                    Profile
-                </a>
-            </li>
-            <li class="nav-item text-center mx-2 mx-lg-1">
-                <a class="nav-link" href="/html/auctionPage.html">
-                    Auction
-                </a>
-            </li>
-            <li class="nav-item text-center mx-2 mx-lg-1" id="searchBar">
-                <form class="d-flex input-group w-auto ms-lg-5 my-3 my-lg-0">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-primary" type="button" data-mdb-ripple-color="dark">
-                        Search
-                    </button>
-                </form>
-            </li>
-</nav>
 
 
 
 <body>
-    <a href="#" class="backButton">&laquo; Back </a>
+    <div id="myNavbar"></div>
+
+    <a href="#" class="btn btn-primary backButton" onclick="window.history.back(); return false;">Back</a>
     <section class="py-5">
         <div class="container">
             <div class="row gx-5">
                 <aside class="col-lg-6">
-                    <div class="border rounded-4 mb-3 d-flex justify-content-center">
-                        <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big.webp">
-                            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big.webp" />
-                        </a>
+
+                    <div id="tags"></div>
+
+
+                    <div class="border rounded-4 mb-3 d-flex justify-content-center" id="mainImage">
+
                     </div>
-                    <div class="d-flex justify-content-center mb-3">
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big1.webp"
-                            class="item-thumb">
-                            <img width="60" height="60" class="rounded-2"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big1.webp" />
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big2.webp"
-                            class="item-thumb">
-                            <img width="60" height="60" class="rounded-2"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big2.webp" />
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big3.webp"
-                            class="item-thumb">
-                            <img width="60" height="60" class="rounded-2"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big3.webp" />
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big4.webp"
-                            class="item-thumb">
-                            <img width="60" height="60" class="rounded-2"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big4.webp" />
-                        </a>
-                        <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image"
-                            href="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big.webp"
-                            class="item-thumb">
-                            <img width="60" height="60" class="rounded-2"
-                                src="https://mdbcdn.b-cdn.net/img/bootstrap-ecommerce/items/detail1/big.webp" />
-                        </a>
+                    <div class="d-flex justify-content-center mb-3" id="miniImages">
+
                     </div>
                     <!-- thumbs-wrap.// -->
                     <!-- gallery-wrap .end// -->
                 </aside>
-                <main class="col-lg-6">
+                <main class="col-lg-6" id="textContent">
                     <div class="ps-lg-3">
-                        <h4 class="title text-dark">
-                            Quality Men's Hoodie for Winter, Men's Fashion <br />
-                            Casual Hoodie
-                        </h4>
+                        <h4 class="title text-dark" id="titleText"></h4>
                     </div>
-                    <p>
-                        Modern look and quality demo item is a streetwear-inspired collection that continues to
-                        break away from the conventions of mainstream fashion. Made in Italy, these black and brown
-                        clothing low-top shirts for
-                        men.
-                    </p>
+                    <p id="descriptionText"></p>
                     <hr />
-                    <!-- col.// -->
+
                     <div class="col-md-4 col-6 mb-3">
                         <label class="mb-2 d-block"> Bid Now </label>
                         <div class="input-group mb-3" style="width: 170px;">
-                            <input type="text" class="form-control text-center border border-secondary" placeholder="14"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                            <button class="btn btn-primary" type="button"> Bid Now </button>
+                            <input type="number" class="form-control text-center border border-secondary"
+                                placeholder="14" aria-label="Example text with button addon"
+                                aria-describedby="button-addon1" id="bidInput" />
+                            <button class="btn btn-primary" type="button" id="bidButton"> Bid Now </button>
                         </div>
                     </div>
+
+
+                </main>
             </div>
 
         </div>
-        </main>
-        </div>
-        </div>
+
     </section>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Wait a minute!</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your alert message goes here.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 

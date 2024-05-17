@@ -1,9 +1,10 @@
-import { addNavBar } from './topNavigationBar.mjs';
-import { get } from './http.mjs';
+import { addNavBar, setCredits } from './topNavigationBar.mjs';
+import { get, post } from './http.mjs';
 
 
 window.onload = async function () {
-    addNavBar();
+    await addNavBar();
+    setCredits();
 }
 
 
@@ -14,16 +15,31 @@ async function getAuctionItem(id) {
     const description = response.data.description;
     const mainImage = response.data.media.length < 1 ? "https://via.placeholder.com/300" : response.data.media[0].url;
     const allImages = response.data.media.length < 1 ? "https://via.placeholder.com/300" : response.data.media;
-    console.log(allImages);
 
-    for (let i = 0; i < allImages.length; i++) {
-        document.getElementById("miniImages").innerHTML += `
+    const listOfTags = response.data.tags;
+    if (listOfTags.length < 1) {
+        document.getElementById("tags").innerHTML = `
+       
+        `
+    } else {
+        for (let i = 0; i < listOfTags.length; i++) {
+            console.log(listOfTags[i]);
+            document.getElementById("tags").innerHTML += `
+        <span class="badge badge-secondary">${listOfTags[i]}</span>
+        `
+        }
+    }
+    if (response.data.media.length >= 1) {
+
+        for (let i = 0; i < allImages.length; i++) {
+            document.getElementById("miniImages").innerHTML += `
         <div class="border mx-1 rounded-2 item-thumb" style="cursor: pointer;"
     onclick="event.preventDefault(); document.getElementById('mainImage').children[0].children[0].src='${allImages[i].url}';">
     <img style="object-fit: cover; width: 60px; height: 60px;" class="rounded-2"
         src="${allImages[i].url}" />
 </div>
         `
+        }
     }
 
     document.getElementById("mainImage").innerHTML = `
@@ -33,31 +49,31 @@ async function getAuctionItem(id) {
         src="${mainImage}" />
 </div>
     `
-    document.getElementById("textContent").innerHTML = `
-    <div class="ps-lg-3">
-                        <h4 class="title text-dark">
-                            ${title}
-                        </h4>
-                    </div>
-                    <p>
-                        ${description}
-                    </p>
-                    <hr />
-                    
-                    <div class="col-md-4 col-6 mb-3">
-                        <label class="mb-2 d-block"> Bid Now </label>
-                        <div class="input-group mb-3" style="width: 170px;">
-                            <input type="text" class="form-control text-center border border-secondary" placeholder="14"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1" />
-                            <button class="btn btn-primary" type="button"> Bid Now </button>
-                        </div>
-                    </div>`;
+    document.getElementById("titleText").textContent = title;
+    document.getElementById("descriptionText").textContent = description;
+
 
 }
+
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 getAuctionItem(id);
 
-
+document.getElementById("bidButton").addEventListener("click", async function () {
+    const bid = document.getElementById("bidInput").value;
+    const response = await post("auction/listings/" + id + "/bids", {
+        amount: parseInt(bid, 10)
+    });
+    console.log(response);
+    if (response.errors) {
+        // Set the alert message in the modal
+        document.querySelector('.modal-body').textContent = response.errors[0].message;
+        // Show the modal
+        var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {});
+        myModal.show();
+    }
+    //location.reload();
+});
 
