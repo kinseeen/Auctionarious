@@ -63,7 +63,9 @@ async function post(url, body, requireAuth = true) {
 }
 
 function authorize(requireAuth) {
-  if (!requireAuth) return;
+  if (!requireAuth) {
+    return;
+  }
   const token = localStorage.getItem("token");
   if (!token) {
     throw new Error("No token saved");
