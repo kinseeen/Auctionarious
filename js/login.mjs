@@ -4,7 +4,7 @@ async function loginUser(email, password) {
   const response = await post("auth/login", {
     email: email,
     password: password,
-  });
+  }, false);
 
   localStorage.setItem("token", response.data.accessToken);
   console.log(response.data.accessToken);

@@ -1,8 +1,14 @@
 import { get, put, post } from "./http.mjs";
+import { addNavBar } from "./topNavigationBar.mjs";
 
 async function getProfile(name) {
   const response = await get("auction/profiles/" + name);
-  console.log(response);
+
+
+  // store credits in local storage
+  console.log(response.data.credits)
+  localStorage.setItem("credits", response.data.credits);
+  
   return response;
 }
 
@@ -14,6 +20,10 @@ async function updateProfile(name, avatarUrl) {
     },
   });
   console.log(response);
+}
+
+window.onload = async function () {
+  addNavBar();
 }
 
 async function setProfileCard(profile) {
@@ -38,3 +48,5 @@ document
 
 const profile = await getProfile("kine");
 setProfileCard(profile);
+
+export { getProfile }

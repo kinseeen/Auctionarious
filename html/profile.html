@@ -13,42 +13,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/topNavigationBar.js"></script>
     <script src="/js/profile.mjs" type="module"></script>
 </head>
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="d-flex flex-column">
 
-            <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionerious logo" id="navbarLogo">
-            <p id="credits"> total credits: </p>
-        </div>
-        <ul class="navbar-nav me-auto d-flex flex-row mt-6 mt-lg-5">
-            <li class="nav-item text-center mx-2 mx-lg-1">
-                <a class="nav-link active" aria-current="page" href="/html/profile.html">
-                    Profile
-                </a>
-            </li>
-            <li class="nav-item text-center mx-2 mx-lg-1">
-                <a class="nav-link" href="/html/auctionPage.html">
-                    Auction
-                </a>
-            </li>
-            <li class="nav-item text-center mx-2 mx-lg-1" id="searchBar">
-                <form class="d-flex input-group w-auto ms-lg-5 my-3 my-lg-0">
-                    <input type="search" class="form-control" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-primary" type="button" data-mdb-ripple-color="dark">
-                        Search
-                    </button>
-                </form>
-            </li>
-</nav>
 
 
 
 <body class="ProfilePageBody">
+    <div id="myNavbar"></div>
 
 
     <div class="container d-flex justify-content-center align-items-center ">
