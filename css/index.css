@@ -146,3 +146,14 @@ h4 {
     width: 200px;
   }
 }
+
+body {
+  padding-top: 70px; /* Adjust this value to match the height of your navbar */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; /* This ensures that the navbar stays on top of other elements */
+}
