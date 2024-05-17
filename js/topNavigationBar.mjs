@@ -9,9 +9,15 @@ async function addNavBar() {
     document.getElementById('logoutButton').addEventListener('click', logout);
 }
 
+async function setCredits() {
+    const credits = await localStorage.getItem("credits");
+    console.log(credits);
+    document.getElementById("credits").textContent += credits;
+  }
+
 function logout() {
     localStorage.clear();
     window.location.href = "/index.html";
 }
 
-export { addNavBar, logout };
+export { addNavBar, logout, setCredits }
