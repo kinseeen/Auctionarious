@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login </title>
+    <title> Register </title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/colorPalette.css">
+    <link rel="stylesheet" href="../css/colorPalette.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="./js/login.mjs" type="module"></script>
+    <script src="/js/registerUser.mjs" type="module"></script>
+
 </head>
 
 <body>
@@ -25,28 +26,36 @@
                     <div class="card shadow-2-strong" style="border-radius: 1rem;">
                         <form class="card-body p-5 text-center" id="registerForm">
                             <img src="/assets/AuctioneriousLogo.jpg" alt="Auctionarious logo" id="loginImage">
-                            <div data-mdb-input-init class="form-outline mb-4">
+
+                            <div class="form-outline mb-4">
                                 <input type="text" id="name" class="form-control" required />
                                 <label class="form-label" for="name">Name</label>
+                                <span id="nameError" style="color: red;"></span>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <input type="email" id="email" class="form-control" required />
-                                <label class="form-label" for="email">Email</label>
+                                <span id="emailError" style="color: red; display: block;"></span>
+                                <label class="form-label" for="email" style="display: block;">Email</label>
+
                             </div>
 
                             <div class="form-outline mb-4">
                                 <input type="password" id="password" class="form-control" required />
                                 <label class="form-label" for="password">Password</label>
+                                <span id="passwordError" style="color: red;"></span>
                             </div>
 
                             <div class="form-outline mb-4">
                                 <input type="text" id="avatar" class="form-control" />
-                                <label class="form-label" for="avatar">Avatar URL</label>
+                                <label class="form-label" for="avatar">Avatar URL (optional)</label>
                             </div>
 
                             <button class="btn btn-primary btn-block" type="submit">Register</button>
+                            <span id="registrationError" style="color: red;"></span>
                         </form>
+                        
+
                     </div>
                 </div>
             </div>
