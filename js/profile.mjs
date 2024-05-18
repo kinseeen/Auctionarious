@@ -8,6 +8,10 @@ import { getProfile, updateProfile } from "./profileModule.mjs";
 
 window.onload = async function () {
   addNavBar();
+  const token = localStorage.getItem("token");
+  if (token === null) {
+    window.location.href = "/index.html";
+  }
 }
 
 async function setProfileCard(profile) {
