@@ -1,12 +1,12 @@
 # Auctionarious - where you can sell and buy items.  
 
-## For this assignment i have created a website from start to finish - from the planning of design to the implementation of all features used for the site. 
-## For the design part of the project, i used Adobe XD to create a design prototype, aswell as a style guide. The choice to use Adobe XD was because it is simple to use, and i can customize exactly how i want my website to look. 
-## The CSS framework used is Bootstrap, the planning applications for my Kanban board and gantt chart was github project. The reason for using github projects for this assignment was that when using github projects you get both your code and your projects in one place, and it makes it easier to keep track of the assignment and what is due next.
+#### For this assignment i have created a website from start to finish - from the planning of design to the implementation of all features used for the site. 
+#### For the design part of the project, i used Adobe XD to create a design prototype, aswell as a style guide. The choice to use Adobe XD was because it is simple to use, and i can customize exactly how i want my website to look. 
+#### The CSS framework used is Bootstrap, the planning applications for my Kanban board and gantt chart was github project. The reason for using github projects for this assignment was that when using github projects you get both your code and your projects in one place, and it makes it easier to keep track of the assignment and what is due next.
 
-## For this project we were tasked with creating a website with the following requirements for the user: 
+#### For this project we were tasked with creating a website with the following requirements for the user: 
 
-## Special instructions for tester: 
+#### Special instructions for tester: 
     A user with a stud.noroff.no email may register - **To test this, please register with or without this email**. 
     A registered user may login - **After registering, log in to test.** 
     A registered user may logout - **Click logout button in top right corner of page.** 
