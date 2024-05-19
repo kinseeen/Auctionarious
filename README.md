@@ -4,6 +4,25 @@
 #### For the design part of the project, i used Adobe XD to create a design prototype, aswell as a style guide. The choice to use Adobe XD was because it is simple to use, and i can customize exactly how i want my website to look. 
 #### The CSS framework used is Bootstrap, the planning applications for my Kanban board and gantt chart was github project. The reason for using github projects for this assignment was that when using github projects you get both your code and your projects in one place, and it makes it easier to keep track of the assignment and what is due next.
 
+#### To run this project locally, you can use visual studio version 16.8 or later. This is how you do it: 
+
+#### 1. Open Visual Studio 2019.
+
+#### 2. On the start window, select Clone a repository.
+
+#### 3. Enter or type the repository location, and then select Clone.
+
+#### 4. You might be asked for your user sign-in information in the Git User Information dialog box. You can either add your information or edit the default information it provides.
+
+#### 5. Select Save to add the info to your global .gitconfig file. (Or, you can select Cancel if you'd like to save the info later.)
+
+#### 6. Next, Visual Studio automatically loads and opens the solution from the repository.
+
+#### 7. Solution Explorer then gives you the option to open the root folder in Folder View or to select a solution file to open.
+
+#### 8. Thats it - you can begin testing locally. 
+
+
 #### For this project we were tasked with creating a website with the following requirements for the user: 
 
 #### Special instructions for tester: 
@@ -16,4 +35,6 @@
     A registered user may add a Bid to another user’s Listing - **After clicking view item on the item you want to bid on, you fill in the bid you want next to the Bid now button. When done, click bid now, and your bid is registered** 
     A registered user may view Bids made on a Listing - **The bids made on a listing will show up underneath the bid now button**
     An unregistered user may search through Listings - ** The user can search through listings using the search bar on top of the auction page.**
+
+    
 
