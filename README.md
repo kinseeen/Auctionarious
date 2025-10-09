@@ -1,40 +1,39 @@
-# Auctionarious - where you can sell and buy items.  
+# Auctionarious
 
-#### For this assignment i have created a website from start to finish - from the planning of design to the implementation of all features used for the site. 
-#### For the design part of the project, i used Adobe XD to create a design prototype, aswell as a style guide. The choice to use Adobe XD was because it is simple to use, and i can customize exactly how i want my website to look. 
-#### The CSS framework used is Bootstrap, the planning applications for my Kanban board and gantt chart was github project. The reason for using github projects for this assignment was that when using github projects you get both your code and your projects in one place, and it makes it easier to keep track of the assignment and what is due next.
-
-#### To run this project locally, you can use visual studio version 16.8 or later. This is how you do it: 
-
-#### 1. Open Visual Studio 2019.
-
-#### 2. On the start window, select Clone a repository.
-
-#### 3. Enter or type the repository location, and then select Clone.
-
-#### 4. You might be asked for your user sign-in information in the Git User Information dialog box. You can either add your information or edit the default information it provides.
-
-#### 5. Select Save to add the info to your global .gitconfig file. (Or, you can select Cancel if you'd like to save the info later.)
-
-#### 6. Next, Visual Studio automatically loads and opens the solution from the repository.
-
-#### 7. Solution Explorer then gives you the option to open the root folder in Folder View or to select a solution file to open.
-
-#### 8. Thats it - you can begin testing locally. 
+<img width="895" height="736" alt="image" src="https://github.com/user-attachments/assets/09c0ed32-d3c6-41c8-8fa7-5bb349391d27" />
 
 
-#### For this project we were tasked with creating a website with the following requirements for the user: 
+### A simple overview of the use/purpose of the project.
+ - This project was created as an assignment for my semester project 2, for Noroff vocational school. The assignment focused on creating a auction website, where the user was able to view, create and bid on items on auction. 
 
-#### Special instructions for tester: 
-    A user with a stud.noroff.no email may register - **To test this, please register with or without this email**. 
-    A registered user may login - **After registering, log in to test.** 
-    A registered user may logout - **Click logout button in top right corner of page.** 
-    A registered user may update their avatar - **On the profile page, click the update avatar button underneath your profile picture. To change, add a different url** 
-    A registered user may view their total credit - **Your total credit is shown on profile page, or on top left, underneath the logo image.**
-    A registered user may create a Listing with a title, deadline date, media gallery and description - **To create a new listing, navigate to the auction site using the top menu bar. In the top right corner there is a blue button called new listing. When clicking this, please fill out title, description, tags (separate by comma: i.e. sale, item, purchase). Add media if needed, and end date for auction item. Finish my clicking create new listing.** 
-    A registered user may add a Bid to another user’s Listing - **After clicking view item on the item you want to bid on, you fill in the bid you want next to the Bid now button. When done, click bid now, and your bid is registered** 
-    A registered user may view Bids made on a Listing - **The bids made on a listing will show up underneath the bid now button**
-    An unregistered user may search through Listings - ** The user can search through listings using the search bar on top of the auction page.**
+Core functionality: 
+1. **Homepage**
+ - Displays a list of all products fetched from the API.
+ - Includes a look-ahead search bar that filters products dynamically as the user types.
+ - Each product card shows relevant details (e.g., title, image, and price).
+ - Clicking on a product navigates the user to that product’s Individual Product Page.
+   
+2. **Individual Product Page**
+ - Fetches and displays data for a single product using its product ID (e.g.,(https://docs.noroff.dev/docs/v2/auction-house/listings/auction/listings/<id>)).
+ - Displays: Product title, Description, Image and current bids.
+ - Includes list of bids, and bid button if user is logged in. 
 
-    
+3. **Profile Page**
+   - Includes name, avatar, email and credits.
+   - Shows users listings, and users active bids on other listings, and winning bids.
 
+
+### Built With
+html
+css
+Bootstrap
+
+### Getting Started
+#### Clone Repository
+ -git clone https://github.com/your-username/your-repo-name.git
+#### Navigate to project folder
+ - cd your-repo-name
+#### Open your project
+
+### Contact
+My linkedin page: https://www.linkedin.com/in/kine-jakobsen-89b618163/
